@@ -1,4 +1,3 @@
-export const ItemListContainer = (Props =>{
-    return <>
-   <p>  {Props.saludo} </p> </>
+export const ItemListContainer = ( ({saludo}) =>{
+    return (<h1 id="title-ItemListContainer">{saludo}</h1>)
 })
