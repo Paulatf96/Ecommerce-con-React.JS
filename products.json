@@ -1,0 +1,136 @@
+[
+    {
+        "id":1,
+        "nombre":"Candonga Perlas",
+        "categoria":"aretes",
+        "precio":"$25.000",
+        "img": "../src/assets/aretes-candonga.jpeg"
+    },
+    {
+        "id":2,
+        "nombre":"Delicadeza",
+        "categoria":"aretes",
+        "precio":"$30.000",
+        "img": "../src/assets/aretes-delicadeza.jpg"
+    },
+    {
+        "id":3,
+        "nombre":"Esmeralda",
+        "categoria":"aretes",
+        "precio":"$22.000",
+        "img": "../src/assets/aretes-esmeralda.jpeg"
+    },
+    {
+        "id":4,
+        "nombre":"Glamour",
+        "categoria":"aretes",
+        "precio":"$35.000",
+        "img": "../src/assets/aretes-glamour.jpeg"
+    },
+    {
+        "id":5,
+        "nombre":"Lujo",
+        "categoria":"aretes",
+        "precio":"$38.000",
+        "img": "./src/assets/aretes-lujo.jpeg"
+    },
+    {
+        "id":6,
+        "nombre":"Perla",
+        "categoria":"aretes",
+        "precio":"$20.000",
+        "img": "./src/assets/aretes-perla.jpeg"
+    },
+    {
+        "id":7,
+        "nombre":"Cadena Dije",
+        "categoria":"cadena",
+        "precio":"$31.000",
+        "img": "./src/assets/cadena-dije.jpg"
+    },
+    {
+        "id":8,
+        "nombre":"Cadena Duo",
+        "categoria":"cadena",
+        "precio":"$28.000",
+        "img": "./src/assets/cadena-duo.jpg"
+    },
+    {
+        "id":9,
+        "nombre":"Cadena Euforia",
+        "categoria":"cadena",
+        "precio":"$27.000",
+        "img": "./src/assets/cadena-euforia.jpg"
+    },
+    {
+        "id":10,
+        "nombre":"Cadena Luna",
+        "categoria":"cadena",
+        "precio":"$37.000",
+        "img": "./src/assets/cadena-luna.jpeg"
+    },
+    {
+        "id":11,
+        "nombre":"Cadena Nombre",
+        "categoria":"cadena",
+        "precio":"$24.000",
+        "img": "./src/assets/cadena-nombre.jpg"
+    },
+    {
+        "id":12,
+        "nombre":"Cadena Oro",
+        "categoria":"cadena",
+        "precio":"$42.000",
+        "img": "./src/assets/cadena-oroAlto.jpg"
+    },
+    {
+        "id":13,
+        "nombre":"Cadena perlas",
+        "categoria":"cadena",
+        "precio":"$22.000",
+        "img": "./src/assets/cadena-perlas.jpg"
+    },
+    {
+        "id":14,
+        "nombre":"Caracol",
+        "categoria":"aretes",
+        "precio":"$29.000",
+        "img": "./src/assets/candonga-caracol.ppg"
+    },
+    {
+        "id":15,
+        "nombre":"Brazalete",
+        "categoria":"pulsera",
+        "precio":"$32.000",
+        "img": "./src/assets/pulsera-brazalete.jpg"
+    },
+    {
+        "id":16,
+        "nombre":"Pulsera Candado",
+        "categoria":"pulsera",
+        "precio":"$29.000",
+        "img": "./src/assets/pulsera-candado.jpg"
+    },
+    {
+        "id":17,
+        "nombre":"Cruzados",
+        "categoria":"pulsera",
+        "precio":"$25.000",
+        "img": "./src/assets/pulsera-cruzado.jpg"
+    },
+    {
+        "id":18,
+        "nombre":"Pandora",
+        "categoria":"pulsera",
+        "precio":"$50.000",
+        "img": "./src/assets/pulsera-pandora.jpg"
+    },
+    {
+        "id":19,
+        "nombre":"Diamante",
+        "categoria":"pulsera",
+        "precio":"$24.000",
+        "img": "./src/assets/pulsera-diamante.jpg"
+    }
+]
+
