@@ -1,0 +1,45 @@
+.containerItemDetail{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2%;
+    margin: 2%;
+    height: 70%;
+    max-height: 100vh;
+    justify-items: center;
+    align-items: center;
+    overflow: hidden;
+}
+.containerItemDetail img{
+    width: 90%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.containerItemDetail img:hover{
+    transform: scale(1.2);
+    transition: transform 0.8s ease;
+}
+
+.itemDetailInfo{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.itemDetailName{
+    font-size: 2em;
+}
+
+.itemDetailButton{
+    border: none;
+    height: 40px;
+    margin: 2%;
+    background-color: rgb(194, 190, 190);
+    border-radius: 5px;
+}
+
+.itemDetailButton:hover{
+    background-color: grey;
+    transition: 0.3s ease-in-out;
+}

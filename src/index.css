@@ -1,3 +1,4 @@
+/* Estilos carrito */
 #cart-container{
   position: relative;
   height: 60px;
@@ -26,7 +27,26 @@
   justify-content: center;
 }
 
-#title-ItemListContainer{
+#productsContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1%;
+  row-gap: 1%;
+  margin: 20px;
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+h6{
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin: 100px;
+  width: 100%;
+  height: 100vh;
+  margin-top: 40vh;
+}
+
+#root > nav > div > span > a, .navbar-nav a{
+  text-decoration: none;
+  color: black;
 }

@@ -1,0 +1,72 @@
+/* Estilos Item*/
+.itemContainer{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5% 3% 5% 3%; 
+    position: relative;
+  }
+  
+.itemImg{
+    width: 90%;
+    height: 22rem;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.imgContainer{
+    display: flex;
+    width: 90%;
+    min-height: 90%;
+    height: 90%;
+    align-items: center;
+    justify-content:center ;
+    overflow: hidden;
+}
+
+.itemInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.itemInfo span{
+    text-align: center;
+}
+
+.itemInfo .itemTitle{
+    margin-top: 10%;
+}
+
+.buttonSee{
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top: 7%;
+    right: 14%;
+    border: none;
+    border-radius: 50%;
+    justify-content: center;
+    width: 8%;
+    height: 7%;
+    align-items: center;
+}
+
+.imgContainer:hover .buttonSee{
+    display: flex;
+    cursor: pointer;
+}
+
+.buttonSee:hover{
+    background-color: rgb(231, 225, 225);
+    transition: 0.8s;
+}
+
+.imgContainer:hover .itemImg{
+    opacity: 60%;
+    transform: scale(1.2);
+    transition: transform 0.8s ease;
+    border-radius: 5px;
+}
+

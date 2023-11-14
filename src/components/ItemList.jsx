@@ -1,7 +1,7 @@
 import {Item} from "./Item"
 export const ItemList = ({products}) => {
     return (
-        <div>
+        <div id="productsContainer">
             {products.map((product => 
             <Item key={product.id} product={product}/> 
             ))}

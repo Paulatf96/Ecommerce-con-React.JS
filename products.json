@@ -4,133 +4,126 @@
         "nombre":"Candonga Perlas",
         "categoria":"Aretes",
         "precio":"$25.000",
-        "img": "../src/assets/Aretes-candonga.jpeg"
+        "img": "/src/assets/aretes-candonga.jpeg"
     },
     {
         "id":2,
         "nombre":"Delicadeza",
         "categoria":"Aretes",
         "precio":"$30.000",
-        "img": "../src/assets/Aretes-delicadeza.jpg"
+        "img": "/src/assets/aretes-delicadeza.jpg"
     },
     {
         "id":3,
         "nombre":"Esmeralda",
         "categoria":"Aretes",
         "precio":"$22.000",
-        "img": "../src/assets/Aretes-esmeralda.jpeg"
+        "img": "/src/assets/aretes-esmeralda.jpeg"
     },
     {
         "id":4,
         "nombre":"Glamour",
         "categoria":"Aretes",
         "precio":"$35.000",
-        "img": "../src/assets/Aretes-glamour.jpeg"
+        "img": "/src/assets/aretes-glamour.jpeg"
     },
     {
         "id":5,
         "nombre":"Lujo",
         "categoria":"Aretes",
         "precio":"$38.000",
-        "img": "./src/assets/Aretes-lujo.jpeg"
+        "img": "/src/assets/aretes-lujo.jpeg"
     },
     {
         "id":6,
         "nombre":"Perla",
         "categoria":"Aretes",
         "precio":"$20.000",
-        "img": "./src/assets/Aretes-perla.jpeg"
+        "img": "/src/assets/aretes-perla.jpeg"
     },
     {
         "id":7,
         "nombre":"Cadenas Dije",
         "categoria":"Cadenas",
         "precio":"$31.000",
-        "img": "./src/assets/Cadenas-dije.jpg"
+        "img": "/src/assets/cadena-dije.jpg"
     },
     {
         "id":8,
         "nombre":"Cadenas Duo",
         "categoria":"Cadenas",
         "precio":"$28.000",
-        "img": "./src/assets/Cadenas-duo.jpg"
+        "img": "/src/assets/cadena-duo.jpg"
     },
     {
         "id":9,
         "nombre":"Cadenas Euforia",
         "categoria":"Cadenas",
         "precio":"$27.000",
-        "img": "./src/assets/Cadenas-euforia.jpg"
+        "img": "/src/assets/cadena-euforia.jpg"
     },
     {
         "id":10,
         "nombre":"Cadenas Luna",
         "categoria":"Cadenas",
         "precio":"$37.000",
-        "img": "./src/assets/Cadenas-luna.jpeg"
+        "img": "/src/assets/cadena-luna.jpeg"
     },
     {
         "id":11,
         "nombre":"Cadenas Nombre",
         "categoria":"Cadenas",
         "precio":"$24.000",
-        "img": "./src/assets/Cadenas-nombre.jpg"
-    },
-    {
-        "id":12,
-        "nombre":"Cadenas Oro",
-        "categoria":"Cadenas",
-        "precio":"$42.000",
-        "img": "./src/assets/Cadenas-oroAlto.jpg"
+        "img": "/src/assets/cadena-nombre.jpg"
     },
     {
         "id":13,
         "nombre":"Cadenas perlas",
         "categoria":"Cadenas",
         "precio":"$22.000",
-        "img": "./src/assets/Cadenas-perlas.jpg"
+        "img": "/src/assets/cadena-perlas.jpg"
     },
     {
         "id":14,
         "nombre":"Caracol",
         "categoria":"Aretes",
         "precio":"$29.000",
-        "img": "./src/assets/candonga-caracol.ppg"
+        "img": "/src/assets/candongas-caracol.png"
     },
     {
         "id":15,
         "nombre":"Brazalete",
         "categoria":"Pulseras",
         "precio":"$32.000",
-        "img": "./src/assets/Pulseras-brazalete.jpg"
+        "img": "/src/assets/pulsera-brazalete.jpg"
     },
     {
         "id":16,
         "nombre":"Pulseras Candado",
         "categoria":"Pulseras",
         "precio":"$29.000",
-        "img": "./src/assets/Pulseras-candado.jpg"
+        "img": "/src/assets/pulsera-candado.jpg"
     },
     {
         "id":17,
         "nombre":"Cruzados",
         "categoria":"Pulseras",
         "precio":"$25.000",
-        "img": "./src/assets/Pulseras-cruzado.jpg"
+        "img": "/src/assets/pulsera-cruzado.jpg"
     },
     {
         "id":18,
         "nombre":"Pandora",
         "categoria":"Pulseras",
         "precio":"$50.000",
-        "img": "./src/assets/Pulseras-pandora.jpg"
+        "img": "/src/assets/pulsera-pandora.jpg"
     },
     {
         "id":19,
         "nombre":"Diamante",
         "categoria":"Pulseras",
         "precio":"$24.000",
-        "img": "./src/assets/Pulseras-diamante.jpg"
+        "img": "/src/assets/pulsera-diamante.png"
     }
 ]
 
