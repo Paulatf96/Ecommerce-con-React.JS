@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
+import { getFirestore, getDoc, doc } from "firebase/firestore";
+import { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
-import datos from "../../products.json";
 import styles from "./ItemDetailStyles.css";
 
 function InfoAccordion() {
@@ -56,24 +57,34 @@ function InfoAccordion() {
 }
 
 export const ItemDetailContainer = () => {
+  const [product, setProduct] = useState(null);
   const { id } = useParams();
-  const products = datos;
+  console.log("id es", id)
 
-  const findedProduct = products.find((product) => product.id == id);
+  useEffect(() => {
+    const db = getFirestore();
+    const refDoc = doc(db, "items", id);
+    getDoc(refDoc).then((snapshot) => {
+      setProduct({ id: snapshot.id, ...snapshot.data() });
+    });
+  }, [id]);
+  console.log(product);
 
-  return (
+  return product ?
     <div className="containerItemDetail">
-      <img src={findedProduct.img} />
+      <img src={product.img} />
       <div className="itemDetailInfo">
-        <span className="itemDetailName">{findedProduct.categoria} {findedProduct.nombre}</span>
-        <span>
-          Precio: <strong>{findedProduct.precio}</strong>
+        <span className="itemDetailName">
+          {product.categoria} {product.nombre}
         </span>
-        <span>Categoria: {findedProduct.categoria}</span>
+        <span>
+          Precio: <strong>${product.precio}</strong>
+        </span>
+        <span>Categoria: {product.categoria}</span>
         <p>Envío gratis por compras superiores a $110.000</p>
         <button className="itemDetailButton">Agregar al carrito</button>
         <div>{InfoAccordion()}</div>
       </div>
     </div>
-  );
+  : <span> Estamos cargando el producto </span>
 };
