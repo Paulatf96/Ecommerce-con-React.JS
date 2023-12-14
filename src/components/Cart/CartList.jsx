@@ -5,6 +5,7 @@ import { ButtonCounter } from "../ButtonCounter";
 import styles from "../ItemDetail/./ItemDetailStyles.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 const clearbuyer = { name: "", phone: "", email: "" };
 export const CartList = () => {
@@ -44,6 +45,7 @@ export const CartList = () => {
 
     addDoc(orderCollection, order).then(({ id }) => {
       if (id) {
+        Swal.fire("Hemos recibido tu pedido con id: " + id);
         limpiarCarrito();
         setBuyer(clearValues);
       }
