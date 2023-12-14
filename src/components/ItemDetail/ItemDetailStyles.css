@@ -34,9 +34,11 @@
 .itemDetailButton{
     border: none;
     height: 40px;
-    margin: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     background-color: rgb(194, 190, 190);
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .itemDetailButton:hover{

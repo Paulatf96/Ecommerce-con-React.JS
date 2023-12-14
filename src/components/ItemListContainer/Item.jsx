@@ -1,4 +1,4 @@
-import styles from "../ItemStyles.css"
+import styles from "./ItemStyles.css"
 import {Link} from "react-router-dom"
 export const Item = ({ product }) => {
     return ( 

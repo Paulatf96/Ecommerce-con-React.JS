@@ -1,10 +1,13 @@
 import { useParams } from "react-router-dom";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import styles from "./ItemDetailStyles.css";
+import { CartContext } from "../../Context/CartContext";
+import { ButtonCounter } from "../ButtonCounter";
 
 function InfoAccordion() {
+  
   return (
     <Accordion>
       <Accordion.Item eventKey="0">
@@ -57,9 +60,10 @@ function InfoAccordion() {
 }
 
 export const ItemDetailContainer = () => {
+  const {addItem} = useContext(CartContext);
   const [product, setProduct] = useState(null);
   const { id } = useParams();
-  console.log("id es", id)
+
 
   useEffect(() => {
     const db = getFirestore();
@@ -68,7 +72,10 @@ export const ItemDetailContainer = () => {
       setProduct({ id: snapshot.id, ...snapshot.data() });
     });
   }, [id]);
-  console.log(product);
+
+  const addFunction = (counter) => {
+    addItem(product, counter)
+  }
 
   return product ?
     <div className="containerItemDetail">
@@ -82,9 +89,10 @@ export const ItemDetailContainer = () => {
         </span>
         <span>Categoria: {product.categoria}</span>
         <p>Envío gratis por compras superiores a $110.000</p>
-        <button className="itemDetailButton">Agregar al carrito</button>
+        <ButtonCounter stock={product.stock} addFunction={addFunction}></ButtonCounter>
+        
         <div>{InfoAccordion()}</div>
       </div>
     </div>
-  : <span> Estamos cargando el producto </span>
+  : <span> Estamos cargando el producto... </span>
 };
