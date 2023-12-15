@@ -5,9 +5,9 @@ import Accordion from "react-bootstrap/Accordion";
 import styles from "./ItemDetailStyles.css";
 import { CartContext } from "../../Context/CartContext";
 import { ButtonCounter } from "../ButtonCounter";
+import Swal from "sweetalert2";
 
 function InfoAccordion() {
-  
   return (
     <Accordion>
       <Accordion.Item eventKey="0">
@@ -60,24 +60,40 @@ function InfoAccordion() {
 }
 
 export const ItemDetailContainer = () => {
-  const {addItem} = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
   const [product, setProduct] = useState(null);
   const { id } = useParams();
-
 
   useEffect(() => {
     const db = getFirestore();
     const refDoc = doc(db, "items", id);
-    getDoc(refDoc).then((snapshot) => {
-      setProduct({ id: snapshot.id, ...snapshot.data() });
-    });
+    getDoc(refDoc)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setProduct({ id: snapshot.id, ...snapshot.data() });
+        } else {
+          //alert("no encontramos el producto");
+          Swal.fire({
+            title: 'Error!',
+            text: 'El producto no existe',
+            icon: 'error',});
+
+            setTimeout(() => {
+              window.location.replace("/")
+              
+            }, 2000);
+        }
+      })
+      .catch((error) => {
+        console.error("Error al obtener el producto:", error);
+      });
   }, [id]);
 
   const addFunction = (counter) => {
-    addItem(product, counter)
-  }
+    addItem(product, counter);
+  };
 
-  return product ?
+  return product ? (
     <div className="containerItemDetail">
       <img src={product.img} />
       <div className="itemDetailInfo">
@@ -89,10 +105,15 @@ export const ItemDetailContainer = () => {
         </span>
         <span>Categoria: {product.categoria}</span>
         <p>Envío gratis por compras superiores a $110.000</p>
-        <ButtonCounter stock={product.stock} addFunction={addFunction}></ButtonCounter>
-        
+        <ButtonCounter
+          stock={product.stock}
+          addFunction={addFunction}
+        ></ButtonCounter>
+
         <div>{InfoAccordion()}</div>
       </div>
     </div>
-  : <span> Estamos cargando el producto... </span>
+  ) : (
+    <span> Estamos cargando el producto... </span>
+  );
 };
