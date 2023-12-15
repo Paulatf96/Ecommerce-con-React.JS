@@ -3,16 +3,16 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { CartContext } from "../../Context/CartContext";
 import { ButtonCounter } from "../ButtonCounter";
 import styles from "../ItemDetail/./ItemDetailStyles.css";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 
 const clearbuyer = { name: "", phone: "", email: "" };
-export const CartList = () => {
+export const CartList = ({setVisible}) => {
   const { removeItem, limpiarCarrito, items, addItem } =
     useContext(CartContext);
   const [buyer, setBuyer] = useState(clearbuyer);
   const [buying, setBuying] = useState(false);
+  const [validation, setValidation] = useState(false);
 
   console.log(items);
 
@@ -36,20 +36,31 @@ export const CartList = () => {
         [name]: value,
       };
     });
+
+    if (buyer.name && buyer.phone && buyer.email) {
+      setValidation(true);
+    }
   };
-  const handledSendOrder = () => {
+  const handledSendOrder = (e) => {
+    e.preventDefault();
     const order = { buyer, items, total };
 
     const db = getFirestore();
     const orderCollection = collection(db, "orders");
 
-    addDoc(orderCollection, order).then(({ id }) => {
-      if (id) {
-        Swal.fire("Hemos recibido tu pedido con id: " + id);
+    addDoc(orderCollection, order)
+      .then(({ id }) => {
+        if (id) {
+          Swal.fire("Hemos recibido tu pedido con id: " + id);
+        }
+      })
+      .finally(() => {
         limpiarCarrito();
-        setBuyer(clearValues);
-      }
-    });
+        setValidation(false);
+        setBuyer(clearbuyer);
+        setVisible(false)
+        setBuying(false)
+      });
   };
 
   const BuyerForm = () => {
@@ -91,7 +102,12 @@ export const CartList = () => {
         </p>
         <div className="flex justify-between my-4">
           <button onClick={() => setBuying(false)}>Volver atrás</button>
-          <button className="btn btn-danger" onClick={handledSendOrder}>
+
+          <button
+            className="btn btn-danger"
+            onClick={(e) => handledSendOrder(e)}
+            disabled={validation ? false : true}
+          >
             Comprar
           </button>
         </div>

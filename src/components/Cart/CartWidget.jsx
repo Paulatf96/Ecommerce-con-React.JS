@@ -16,8 +16,7 @@ export const CartWidget = () => {
         <span >{items.length}</span>
       </div>
       <SidebarCart visible={visible} setVisible={setVisible}>
-
-        <CartList/>
+        <CartList setVisible={setVisible}/>
       </SidebarCart>
     </>
   );
