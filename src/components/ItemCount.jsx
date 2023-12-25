@@ -2,7 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export const ButtonCounter = ({
+export const ItemCount = ({
   stock,
   addFunction,
   decreaseFunction,

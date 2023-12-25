@@ -2,10 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { CartWidget } from "../Cart/CartWidget";
-
-// const categories = products.map(product => product.categoria)
-// const categoriesSet= new Set(categories)
+import { CartWidget } from "./CartWidget";
 
 export const NavBar = () => {
   return (

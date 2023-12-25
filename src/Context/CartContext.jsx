@@ -11,22 +11,19 @@ export const CartProvider = ({ children }) => {
 
   const addItem = (item, quantity) => {
     const exists = items.some((i) => i.id === item.id);
-    console.log("el de context", item, exists);
 
     if (exists) {
       const updatedItem = items.map((i) => {
         if (i.id === item.id) {
-          console.log(i.id, item.id);
           return { ...i, quantity: i.quantity + quantity };
-        }else{
+        } else {
           return i;
         }
       });
       setItems(updatedItem);
     } else {
-      setItems((prev) =>  [...prev, { ...item, quantity }]);
+      setItems((prev) => [...prev, { ...item, quantity }]);
     }
- 
   };
 
   const removeItem = (id) => {
