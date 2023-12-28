@@ -1,5 +1,5 @@
-import styles from "./ItemStyles.css";
 import { Link } from "react-router-dom";
+import "./ItemStyles.css";
 export const Item = ({ product }) => {
   return (
     <div className="itemContainer">

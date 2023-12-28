@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 import { CartContext } from "../Context/CartContext";
 import { ItemCount } from "./ItemCount";
 import { BuyerForm } from "./BuyerForm";
-import styles from "./ItemDetailStyles.css";
-import "react-toastify/dist/ReactToastify.css";
-import Swal from "sweetalert2";
+import "./ItemDetailStyles.css";
 
 const clearbuyer = { name: "", phone: "", email: "" };
 export const CartList = () => {
