@@ -5,7 +5,7 @@ import "./index.css";
 import { initializeApp } from "firebase/app";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import firebaseConfig from "./fireBase/firebase-config.js";
+import {firebaseConfig} from "./fireBase/firebase-config.js";
 import App from "./App.jsx";
 
 // Initialize Firebase
