@@ -14,6 +14,9 @@ export const CartList = () => {
   const [buyer, setBuyer] = useState(clearbuyer);
   const [buying, setBuying] = useState(false);
   const [validation, setValidation] = useState(false);
+  const [nameValidator, setNameValidator] = useState(true);
+  const [phoneValidator, setPhoneValidator] = useState(true);
+  const [emailValidator, setEmailValidator] = useState(true);
 
   const total = items.reduce((acumulado, actual) => {
     return acumulado + actual.precio * actual.quantity;
@@ -36,33 +39,31 @@ export const CartList = () => {
       };
     });
 
-    if (buyer.name && buyer.phone && buyer.email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isEmailValid = emailRegex.test(buyer.email);
+    const isNameValid = /^[A-Za-z ]{2,}$/.test(buyer.name.trim());
+    const isPhoneValid = /^[0-9]{7,}$/.test(buyer.phone.trim());
+    console.log("phone", isPhoneValid, value);
+    if (isNameValid) {
+      setNameValidator(false);
+    }
+
+    if (isPhoneValid) {
+      setPhoneValidator(false);
+      console.log(phoneValidator);
+    }
+
+    if (isEmailValid) {
+      console.log("entro a email");
+      setEmailValidator(false);
+    }
+    if (isNameValid && isPhoneValid && isEmailValid) {
       setValidation(true);
     }
   };
   const handledSendOrder = (e) => {
     e.preventDefault();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isEmailValid = emailRegex.test(buyer.email);
 
-    const isNameValid = /^[A-Za-z ]{2,}$/.test(buyer.name.trim());
-    const isPhoneValid = /^[0-9]{7,}$/.test(buyer.phone.trim());
-    if (!isNameValid) {
-      alert("Ingresa un nombre válido (solo letras y mínimo 2 caracteres)");
-      return;
-    }
-
-    if (!isPhoneValid) {
-      alert(
-        "Ingresa un número de teléfono válido (solo números y mínimo 7 caracteres)"
-      );
-      return;
-    }
-
-    if (!isEmailValid) {
-      alert("Ingresa un correo electrónico válido");
-      return;
-    }
     const order = { buyer, items, total };
 
     const db = getFirestore();
@@ -143,6 +144,9 @@ export const CartList = () => {
           handledSendOrder={handledSendOrder}
           total={total}
           buyer={buyer}
+          nameValidator={nameValidator}
+          phoneValidator={phoneValidator}
+          emailValidator={emailValidator}
         />
       );
     } else {
