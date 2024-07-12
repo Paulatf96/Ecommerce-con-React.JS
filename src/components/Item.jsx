@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Eye from "../assets/eye-regular.svg";
 import "./ItemStyles.css";
 export const Item = ({ product }) => {
   return (
@@ -7,7 +8,7 @@ export const Item = ({ product }) => {
         <img className="itemImg" src={product.img} />
 
         <Link className="buttonSee" to={`/item/${product.id}`}>
-          <img src="/src/assets/eye-regular.svg" width={20} height={20} />
+          <img src={Eye} width={20} height={20} />
         </Link>
       </div>
       <div className="itemInfo">
